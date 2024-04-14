@@ -1,0 +1,226 @@
+--- 
+import Book from "../assets/book-solid.svg"
+import Helmet from "../assets/helmet-safety-solid.svg"
+import Ruler from "../assets/ruler-combined-solid.svg"
+import Toolbox from "../assets/toolbox-solid.svg"
+import Screwdriver from "../assets/screwdriver-wrench-solid.svg"
+---
+<section id="services-1188">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title" style ="font-size: 30px;">OUR SERVICES</h1>
+            <p class="cs-text">
+                We specialize in the following areas: 
+            </p>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src={Book.src}>
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Construction contracts</h3>
+                    <p class="cs-item-text">We undertake in both full and partial construction contracts.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" 
+                         src={Helmet.src}>
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3"> Project Management</h3>
+                    <p class="cs-item-text">We supervise construction projects to ensure they are completed on time, within budget, and according to quality and safety standards.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src={Ruler.src}>
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Architectural designs development</h3>
+                    <p class="cs-item-text">We create detailed plans outlining a building's layout, aesthetics, and functionality.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src={Toolbox.src}>
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">General steel and timber fabrication</h3>
+                    <p class="cs-item-text"> We fabricate custom structural and decorative elements from steel and timber for construction projects.</p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon"
+                            src={Screwdriver.src}>
+                </picture>
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">Structural repairs, refurbishments and maintenance</h3>
+                    <p class="cs-item-text">We restore and enhance buildings to ensure safety and longevity.</p>
+                </div>
+            </li>
+            
+        </ul>
+        <a href="/#contact-1388" class="cs-button-solid">Book Appointment</a>
+    </div>
+</section>
+
+<style>
+
+    /*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-1188 {
+        padding: var(--sectionPadding);
+    }
+    #services-1188 .cs-container {
+        max-width: 80rem;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #services-1188 .cs-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+    }
+
+    #services-1188 .cs-card-group {
+        /* changes to 1280px at desktop */
+        max-width: 56.25rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-content: center;
+        gap: 1rem;
+    }
+    #services-1188 .cs-item {
+        list-style: none;
+        max-width: 23rem;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 1rem;
+        border: 1px solid #e8e8e8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    #services-1188 .cs-picture {
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 1.25rem;
+        box-sizing: border-box;
+        /* prevents border from affecting height and width */
+        background-color: #f7f7f7;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+    #services-1188 .cs-icon {
+        width: 1.875rem;
+        height: auto;
+        display: block;
+    }
+    #services-1188 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+        text-align: center;
+    }
+    #services-1188 .cs-item-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+        text-align: center;
+    }
+    #services-1188 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        font-weight: 700;
+        min-width: 9.375rem;
+        margin: 0;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+        color: #fff;
+        background-color: var(--primary);
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+    #services-1188 .cs-button-solid:before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        background: #000;
+        opacity: 1;
+        border-radius: 0.25rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+    #services-1188 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #services-1188 .cs-card-group {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+    #services-1188 .cs-item {
+        margin: 0;
+    }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #services-1188 .cs-card-group {
+        max-width: 80rem;
+    }
+    #services-1188 .cs-item {
+        max-width: none;
+        padding: 2rem 1.5rem;
+    }
+}
+
+                                
+</style>
+                                

@@ -1,0 +1,121 @@
+--- 
+
+import Img1 from "../assets/img1.jpg"
+import Img2 from "../assets/img2.jpg"
+import Img3 from "../assets/image2.jpg"
+import Img9 from "../assets/img9.jpg"
+import Img5 from "../assets/image-248.jpg"
+import Img7 from "../assets/img7.jpg"
+
+---
+<section id="gallery-379">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">SOME OF OUR PROJECTS</h2>
+            <p class="cs-text">
+                Here are some residential and commercial buildings done by us:
+        </div>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img1.src}>
+            </picture>
+            <!--Picture 2-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img2.src}>
+            </picture>
+            <!--Picture 3-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img3.src}>
+            </picture>
+            <!--Picture 4-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img9.src}>
+            </picture>
+            <!--Picture 5-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img5.src}>
+            </picture>
+            <!--Picture 6-->
+            <picture class="cs-image">
+                <img loading="lazy" decoding="async" src={Img7.src}>
+            </picture>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    
+    /*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-379 {
+    padding: var(--sectionPadding);
+  }
+  #gallery-379 .cs-container {
+    width: 100%;
+    max-width: 59.6875rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #gallery-379 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #gallery-379 .cs-gallery {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* 16px - 20px */
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+  }
+  #gallery-379 .cs-image {
+    border-radius: 1.25rem;
+    width: 46%;
+    /* 150px - 300px */
+    height: clamp(9.375rem, 39vw, 18.75rem);
+    max-width: 21.875rem;
+    /* clips the image corners */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #gallery-379 .cs-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes it act like a background image */
+    object-fit: cover;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #gallery-379 .cs-image {
+    width: 32.8%;
+    max-width: 19.0625rem;
+    /* 300px - 400px */
+    height: clamp(18.75rem, 30vw, 25rem);
+    aspect-ratio: 1;
+  }
+}
+                                
+</style>
