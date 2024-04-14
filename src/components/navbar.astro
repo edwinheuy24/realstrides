@@ -425,64 +425,65 @@ import Logo from "../assets/logo.png"
 </style>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
     // add classes for mobile navigation toggling
-var CSbody = document.querySelector('body');
+    const CSbody = document.querySelector('body');
+    const CSnavbarMenu = document.querySelector('#cs-navigation');
+    const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
-const CSnavbarMenu = document.querySelector('#cs-navigation');
-
-const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
-
-CShamburgerMenu.addEventListener('click', function () {
-    CShamburgerMenu.classList.toggle('cs-active');
-    CSnavbarMenu.classList.toggle('cs-active');
-    CSbody.classList.toggle('cs-open');
-    // run the function to check the aria-expanded value
-    ariaExpanded();
-});
-
-// checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-function ariaExpanded() {
-    const csUL = document.querySelector('#cs-expanded');
-    const csExpanded = csUL.getAttribute('aria-expanded');
-
-    if (csExpanded === 'false') {
-        csUL.setAttribute('aria-expanded', 'true');
-    } else {
-        csUL.setAttribute('aria-expanded', 'false');
+    if (CShamburgerMenu) {
+        CShamburgerMenu.addEventListener('click', function () {
+            CShamburgerMenu.classList.toggle('cs-active');
+            CSnavbarMenu.classList.toggle('cs-active');
+            CSbody.classList.toggle('cs-open');
+            // run the function to check the aria-expanded value
+            ariaExpanded();
+        });
     }
-}
 
-// mobile nav toggle code
-const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-for (const item of dropDowns) {
-    const onClick = () => {
-        item.classList.toggle('cs-active');
-    };
-    item.addEventListener('click', onClick);
-}
-
-function updateActiveNavLink() {
-    // Get the current URL path
-    const currentPath = window.location.pathname;
-    
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('#cs-navigation .cs-li-link');
-    
-    // Iterate over the links and update the active state
-    navLinks.forEach(link => {
-        // Compare the link's href with the current path
-        if (link.getAttribute('href') === currentPath) {
-            // Add the cs-active class to the matching link
-            link.classList.add('cs-active');
-        } else {
-            // Remove the cs-active class from other links
-            link.classList.remove('cs-active');
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        if (csUL) {
+            const csExpanded = csUL.getAttribute('aria-expanded');
+            if (csExpanded === 'false') {
+                csUL.setAttribute('aria-expanded', 'true');
+            } else {
+                csUL.setAttribute('aria-expanded', 'false');
+            }
         }
-    });
-}
+    }
 
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', updateActiveNavLink);
-                                
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+    for (const item of dropDowns) {
+        const onClick = () => {
+            item.classList.toggle('cs-active');
+        };
+        item.addEventListener('click', onClick);
+    }
+
+    function updateActiveNavLink() {
+        // Get the current URL path
+        const currentPath = window.location.pathname;
+
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('#cs-navigation .cs-li-link');
+
+        // Iterate over the links and update the active state
+        navLinks.forEach(link => {
+            // Compare the link's href with the current path
+            if (link.getAttribute('href') === currentPath) {
+                // Add the cs-active class to the matching link
+                link.classList.add('cs-active');
+            } else {
+                // Remove the cs-active class from other links
+                link.classList.remove('cs-active');
+            }
+        });
+    }
+
+    // Call the function when the page loads
+    updateActiveNavLink();
+});
 </script>
-                                
