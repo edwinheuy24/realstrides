@@ -434,8 +434,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (CShamburgerMenu) {
         CShamburgerMenu.addEventListener('click', function () {
             CShamburgerMenu.classList.toggle('cs-active');
-            CSnavbarMenu.classList.toggle('cs-active');
-            CSbody.classList.toggle('cs-open');
+            if (CSnavbarMenu) {
+                CSnavbarMenu.classList.toggle('cs-active');
+            }
+            if (CSbody) {
+                CSbody.classList.toggle('cs-open');
+            }
             // run the function to check the aria-expanded value
             ariaExpanded();
         });
