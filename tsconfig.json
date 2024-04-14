@@ -1,11 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
-
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
     "jsx": "react",
-    "jsxImportSource": "@astro-js/astro"
+    "module": "commonjs",
+    "target": "es5"
   }
-
-
 }
+
+
+
 
