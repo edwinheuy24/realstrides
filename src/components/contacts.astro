@@ -64,22 +64,32 @@
 </section>
 
 <script>
-document.getElementById('cs-form-1388').addEventListener('submit', function(event) {
+document.getElementById('cs-form-1388')?.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
 
     // Get the form data
-    const name = (<HTMLInputElement>document.getElementById('name-1388')).value;
-    const email = (<HTMLInputElement>document.getElementById('email')).value;
-    const phone = (<HTMLInputElement>document.getElementById('phone')).value;
-    const message = (<HTMLInputElement>document.getElementById('message-1388')).value;
+    const nameInput = document.getElementById('name-1388') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const phoneInput = document.getElementById('phone') as HTMLInputElement;
+    const messageInput = document.getElementById('message-1388') as HTMLInputElement;
 
-    // Construct the mailto URL
-    const mailtoUrl = `mailto:realstrides@yahoo.com?subject=New%20Message%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(phone)}%0AMessage:%20${encodeURIComponent(message)}`;
+    if (nameInput && emailInput && phoneInput && messageInput) {
+        const name = nameInput.value;
+        const email = emailInput.value;
+        const phone = phoneInput.value;
+        const message = messageInput.value;
 
-    // Open the mail client
-    window.location.href = mailtoUrl;
+        // Construct the mailto URL
+        const mailtoUrl = `mailto:realstrides@yahoo.com?subject=New%20Message%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(phone)}%0AMessage:%20${encodeURIComponent(message)}`;
+
+        // Open the mail client
+        window.location.href = mailtoUrl;
+    } else {
+        console.error('Failed to retrieve form inputs');
+    }
 });
 </script>
+
 
 
 <style>
