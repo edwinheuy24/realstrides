@@ -427,21 +427,10 @@ import Logo from "../assets/logo.png"
 <script>
     // add classes for mobile navigation toggling
 var CSbody = document.querySelector('body');
-if (CSbody) {
-    CSbody.classList.toggle('cs-open');
-}
-// Check if CSnavbarMenu exists before accessing its properties
 
 const CSnavbarMenu = document.querySelector('#cs-navigation');
-if (CSnavbarMenu) {
-    CSnavbarMenu.classList.toggle('cs-active');
-}
-
 
 const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
-if (CShamburgerMenu) {
-    CShamburgerMenu.classList.toggle('cs-active');
-}
 
 CShamburgerMenu.addEventListener('click', function () {
     CShamburgerMenu.classList.toggle('cs-active');
